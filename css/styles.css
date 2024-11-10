@@ -1,0 +1,330 @@
+/***
+ * CSS Reset
+ * A modern CSS reset that removes default browser styles
+ * Version: 1.11.3 (2024-08-25)
+ * Source: https://github.com/elad2412/the-new-css-reset
+ */
+
+/* Base reset - removes all styles except display */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Typography */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Interactive elements */
+a,
+button {
+    cursor: revert;
+}
+
+/* Lists */
+ol,
+ul,
+menu,
+summary {
+    list-style: none;
+}
+
+ol {
+    counter-reset: revert;
+}
+
+/* Media */
+img {
+    max-inline-size: 100%;
+    max-block-size: 100%;
+}
+
+/* Tables */
+table {
+    border-collapse: collapse;
+}
+
+/* Form elements */
+input,
+textarea {
+    -webkit-user-select: auto;
+}
+
+textarea {
+    white-space: revert;
+}
+
+meter {
+    -webkit-appearance: revert;
+    appearance: revert;
+}
+
+/* Preformatted text */
+:where(pre) {
+    all: revert;
+    box-sizing: border-box;
+}
+
+/* Placeholders */
+::placeholder {
+    color: unset;
+}
+
+/* Hidden elements */
+:where([hidden]) {
+    display: none;
+}
+
+/* Content editable */
+:where([contenteditable]:not([contenteditable="false"])) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+    -webkit-user-select: auto;
+}
+
+/* Draggable elements */
+:where([draggable="true"]) {
+    -webkit-user-drag: element;
+}
+
+/* Modal dialogs */
+:where(dialog:modal) {
+    all: revert;
+    box-sizing: border-box;
+}
+
+/* Details summary */
+::-webkit-details-marker {
+    display: none;
+}
+
+/* End of CSS Reset */
+
+html {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 18px;
+}
+
+.results-container {
+    background-color: white;
+    width: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+}
+
+.result-section {
+    background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    border-radius: 0 0 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.section-title {
+    font-size: 18px;
+}
+
+.result-section {
+    margin-bottom: 24px;
+}
+
+.result-section .section-title {
+    color: lightgray;
+    padding: 24px 0;
+
+}
+
+.score-container {
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(to bottom, hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.result-section .score-value {
+    font-size: 56px;
+    font-weight: 800;
+}
+
+.result-section .score-max {
+    font-size: 16px;
+    color: rgba(211, 211, 211, 0.5);
+}
+
+.result-heading {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.result-text {
+    font-size: 16px;
+    color: rgba(211, 211, 211, 0.9);
+    text-align: center;
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto 40px auto;
+}
+
+.summary-section {
+    padding: 0 37px;
+}
+
+.summary-section .section-title {
+    color: rgb(0, 0, 50);
+    margin-bottom: 24px;
+}
+
+.summary-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 17px 16px;
+    border-radius: 12px;
+}
+
+.summary-item img {
+    margin-right: 12px;
+}
+
+.summary-item .item-name {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.item-score {
+    margin-left: auto;
+}
+
+.summary-item .score-value {
+    font-size: 16px;
+    color: rgb(0, 0, 50);
+    font-weight: 500;
+}
+
+
+.summary-item .score-max {
+    font-size: 16px;
+    color: rgba(0, 0, 50, 0.5);
+}
+
+.summary-item--reaction {
+    background-color: hsla(0, 100%, 67%, 0.1);
+}
+
+.summary-item--reaction .item-name {
+    color: hsl(0, 100%, 67%);
+}
+
+.summary-item--memory {
+    background-color: hsla(39, 100%, 56%, 0.1);
+}
+
+.summary-item--memory .item-name {
+    color: hsl(39, 100%, 56%);
+}
+
+.summary-item--verbal {
+    background-color: hsla(166, 100%, 37%, 0.1);
+}
+
+.summary-item--verbal .item-name {
+    color: hsl(166, 100%, 37%);
+}
+
+.summary-item--visual {
+    background-color: hsla(234, 85%, 45%, 0.1);
+}
+
+.summary-item--visual .item-name {
+    color: hsl(234, 85%, 45%);
+}
+
+.button {
+    width: 100%;
+    padding: 16px 0;
+    display: block;
+    text-align: center;
+    border-radius: 100px;
+    background-color: rgb(0, 0, 50);
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 24px;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+
+    html {
+        background-color: hsl(221, 100%, 96%);
+    }
+
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .results-container {
+        display: flex;
+        flex-direction: row;
+        max-width: 736px;
+        margin: 0 auto;
+        border-radius: 32px;
+    }
+
+    .result-section,
+    .summary-section {
+        width: 50%;
+        padding: 0;
+    }
+
+    .result-section {
+        border-radius: 32px;
+        margin: 0;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .result-section .section-title {
+        padding: 32px 0;
+    }
+
+    .score-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .result-section .score-value {
+        font-size: 72px;
+    }
+}

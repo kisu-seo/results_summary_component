@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="./data.json" type="application/json"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <title>Results summary component</title>
+
+</head>
+
+<body>
+  <main class="results-container">
+    <!-- Result Section -->
+    <section class="result-section" aria-label="Test Result">
+      <h2 class="section-title">Your Result</h2>
+      <div class="score-container">
+        <p class="score-value">76</p>
+        <p class="score-max">of 100</p>
+      </div>
+      <h3 class="result-heading">Great</h3>
+      <p class="result-text">You scored higher than 65% of the people who have taken these tests.</p>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="summary-section" aria-label="Score Summary">
+      <h2 class="section-title">Summary</h2>
+
+      <div class="summary-list">
+        <div class="summary-item summary-item--reaction">
+          <img src="./assets/images/icon-reaction.svg" alt="Reaction">
+          <p class="item-name">Reaction</p>
+          <p class="item-score">
+            <span class="score-value">80</span>
+            <span class="score-max">/ 100</span>
+          </p>
+        </div>
+
+        <div class="summary-item summary-item--memory">
+          <img src="./assets/images/icon-memory.svg" alt="Memory">
+          <p class="item-name">Memory</p>
+          <p class="item-score">
+            <span class="score-value">92</span>
+            <span class="score-max">/ 100</span>
+          </p>
+        </div>
+
+        <div class="summary-item summary-item--verbal">
+          <img src="./assets/images/icon-verbal.svg" alt="Verbal">
+          <p class="item-name">Verbal</p>
+          <p class="item-score">
+            <span class="score-value">61</span>
+            <span class="score-max">/ 100</span>
+          </p>
+        </div>
+
+        <div class="summary-item summary-item--visual">
+          <img src="./assets/images/icon-visual.svg" alt="Visual">
+          <p class="item-name">Visual</p>
+          <p class="item-score">
+            <span class="score-value">72</span>
+            <span class="score-max">/ 100</span>
+          </p>
+        </div>
+      </div>
+
+      <button class="button button--primary" type="button">Continue</button>
+    </section>
+  </main>
+</body>
+
+</html>
