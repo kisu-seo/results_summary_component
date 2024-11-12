@@ -112,9 +112,22 @@ meter {
 
 /* End of CSS Reset */
 
+/* Common Variables */
+:root {
+    --font-family: 'Hanken Grotesk', sans-serif;
+    --font-size-base: 16px;
+    --font-size-medium: 18px;
+    --font-size-large: 24px;
+    --color-dark: rgb(0, 0, 50);
+    --color-light-gray: rgba(211, 211, 211, 0.5);
+    --gradient-primary: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    --gradient-circle: linear-gradient(to bottom, hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+}
+
+/* Base Styles */
 html {
-    font-family: 'Hanken Grotesk', sans-serif;
-    font-size: 18px;
+    font-family: var(--font-family);
+    font-size: var(--font-size-medium);
 }
 
 .results-container {
@@ -125,33 +138,25 @@ html {
 }
 
 .result-section {
-    background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    background: var(--gradient-primary);
     border-radius: 0 0 2rem 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
-}
-
-.section-title {
-    font-size: 18px;
-}
-
-.result-section {
     margin-bottom: 24px;
 }
 
-.result-section .section-title {
+.section-title {
+    font-size: var(--font-size-medium);
     color: lightgray;
-    padding: 24px 0;
-
 }
 
 .score-container {
     width: 140px;
     height: 140px;
-    background: linear-gradient(to bottom, hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+    background: var(--gradient-circle);
     border-radius: 50%;
     display: flex;
     flex-direction: column;
@@ -160,24 +165,24 @@ html {
     margin-bottom: 24px;
 }
 
-.result-section .score-value {
+.score-value {
     font-size: 56px;
     font-weight: 800;
 }
 
-.result-section .score-max {
-    font-size: 16px;
-    color: rgba(211, 211, 211, 0.5);
+.score-max {
+    font-size: var(--font-size-base);
+    color: var(--color-light-gray);
 }
 
 .result-heading {
-    font-size: 24px;
+    font-size: var(--font-size-large);
     font-weight: 500;
     margin-bottom: 8px;
 }
 
 .result-text {
-    font-size: 16px;
+    font-size: var(--font-size-base);
     color: rgba(211, 211, 211, 0.9);
     text-align: center;
     width: 100%;
@@ -190,7 +195,7 @@ html {
 }
 
 .summary-section .section-title {
-    color: rgb(0, 0, 50);
+    color: var(--color-dark);
     margin-bottom: 24px;
 }
 
@@ -212,24 +217,18 @@ html {
     margin-right: 12px;
 }
 
-.summary-item .item-name {
-    font-size: 16px;
+.summary-item .item-name,
+.summary-item .score-value,
+.summary-item .score-max {
+    font-size: var(--font-size-base);
     font-weight: 500;
-}
-
-.item-score {
-    margin-left: auto;
 }
 
 .summary-item .score-value {
-    font-size: 16px;
-    color: rgb(0, 0, 50);
-    font-weight: 500;
+    color: var(--color-dark);
 }
 
-
 .summary-item .score-max {
-    font-size: 16px;
     color: rgba(0, 0, 50, 0.5);
 }
 
@@ -271,16 +270,15 @@ html {
     display: block;
     text-align: center;
     border-radius: 100px;
-    background-color: rgb(0, 0, 50);
+    background-color: var(--color-dark);
     color: white;
-    font-size: 18px;
+    font-size: var(--font-size-medium);
     font-weight: 500;
     margin-top: 24px;
     cursor: pointer;
 }
 
 @media (min-width: 768px) {
-
     html {
         background-color: hsl(221, 100%, 96%);
     }
@@ -312,19 +310,50 @@ html {
     }
 
     .section-title {
-        font-size: 24px;
+        font-size: var(--font-size-large);
     }
 
     .result-section .section-title {
-        padding: 32px 0;
+        padding: 38px 0 35px 0;
+    }
+
+    .summary-section .section-title {
+        padding: 0;
     }
 
     .score-container {
         width: 200px;
         height: 200px;
+        margin-bottom: 28px;
     }
 
     .result-section .score-value {
         font-size: 72px;
+    }
+
+    .result-section .score-max {
+        font-size: var(--font-size-medium);
+    }
+
+    .result-section .result-heading {
+        font-size: 32px;
+        margin-bottom: 14px;
+    }
+
+    .result-section .result-text {
+        font-size: var(--font-size-medium);
+        margin-bottom: 46px;
+    }
+
+    .summary-section {
+        padding: 38px 40px 0 40px;
+    }
+
+    .button {
+        margin-top: 41px;
+    }
+
+    .button:hover {
+        background: var(--gradient-primary);
     }
 }
